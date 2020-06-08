@@ -1,4 +1,4 @@
-from qnap import Qts, QtsException, LoginFailedException
+from .qnap import Qts, QtsException, LoginFailedException
 from json import loads
 
 class AddURLException(QtsException):
