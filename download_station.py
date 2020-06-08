@@ -19,7 +19,7 @@ class DownloadStation:
             self.login()
 
     def build_ds_url(self, catagory, func, version="V4"):
-        return f"{qts.baseurl}/downloadstation/{version}/{catagory}/{func}"
+        return f"{self._qts.baseurl}/downloadstation/{version}/{catagory}/{func}"
 
     def login(self):
         r  = self._user.post(self.build_ds_url("Misc", "Login"))
