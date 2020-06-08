@@ -22,6 +22,8 @@ class DownloadStation:
         return f"{self._qts.baseurl}/downloadstation/{version}/{catagory}/{func}"
 
     def login(self):
+        if not self._qts.is_login:
+            self._qts.login()
         r  = self._user.post(self.build_ds_url("Misc", "Login"))
         j = loads(r.text)
         if j['error'] == 0:
